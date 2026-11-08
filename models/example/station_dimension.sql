@@ -6,7 +6,7 @@ WITH bike AS
     STARTSTATIONNAME,
     STARTLATITUDE,
     STARTLONGITUDE
-    FROM {{ source('demo', 'bike') }}
+    FROM {{ ref('stage_bike') }}
 )
 
 SELECT

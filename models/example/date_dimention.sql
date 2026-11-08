@@ -9,7 +9,7 @@
         DAYNAME(TO_TIMESTAMP(STARTEDAT)) AS STARTED_DAY,
         {{get_day_of_the_week('STARTEDAT')}} AS DAY_TYPE,
         {{get_season('STARTEDAT')}} AS STARTED_SEASON
-        FROM {{ source('demo', 'bike') }}
+        FROM {{ ref('stage_bike') }}
     )
 
     SELECT 
